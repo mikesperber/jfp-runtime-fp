@@ -1,0 +1,88 @@
+\NeedsTeXFormat{LaTeX2e}
+
+\documentclass{jfp1}
+
+%%% Macros for the guide only %%%
+\providecommand\AMSLaTeX{AMS\,\LaTeX}
+\newcommand\eg{\emph{e.g.}\ }
+\newcommand\etc{\emph{etc.}}
+\newcommand\bcmdtab{\noindent\bgroup\tabcolsep=0pt%
+  \begin{tabular}{@{}p{10pc}@{}p{20pc}@{}}}
+\newcommand\ecmdtab{\end{tabular}\egroup}
+\newcommand\rch[1]{$\longrightarrow\rlap{$#1$}$\hspace{1em}}
+\newcommand\lra{\ensuremath{\quad\longrightarrow\quad}}
+
+\title[Special Issue on Run-Time Systems and Target Platforms for Functional Languages]
+      {Special Issue on Run-Time Systems and Target Platforms for Functional Languages \\
+Editorial}
+
+{ \author{}}
+
+\jdate{}
+\pubyear{}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\doi{}
+
+\begin{document}
+\maketitle
+
+\noindent Most papers on functional programming are about its use or the design
+of functional languages.  This special issue of JFP instead focusses
+on low-level aspects of the \emph{implementation} of functional
+languages~-- what happens during the run time of a functional program.
+Lennart Augustsson and Michael Sperber acted as editors for this
+special issue, and started soliciting papers in late 2012.  The
+original call for papers covered native-code platforms as well as
+run-time systems originally conceived for non-functional languages
+such as the Java Virtual Machine or the .NET Common Language Runtime.
+Alas, in the end, we exclusively received submissions about
+native-code run-time systems.  However, the four papers we accepted
+cover a wide spectrum of languages and implementation issues.  These
+hint at the breadth of existing functional-language run-time systems
+and the maturity of available implementations.  We hope that you enjoy
+reading the papers ass much as we did.
+
+In \textit{MultiMLton: A Multicore-Aware Runtime for Standard ML},
+Sivaramakrishnan, Ziarek and Jagannathan offer a comprehensive account
+of a scalable multicore run-time system for an extended version of
+Standard ML.  The MultiMLton system contains ACML, a version of
+Concurrent ML extended with asynchronous events.  ACML allows the
+programmer to express concurrency and exploit parallelism in a
+program.  To make the concurrency in a program exposed by ACML run
+efficiently, the MultiMLton run-time system must provide extremely
+concurrency cheaper than even the lightweight threads afforded through
+efficient representations of continuations common in
+functional-language run times.  To that end, MultiMLton provides
+\textit{parasites}, which run conceptually asynchronous computations
+on ``host threads,'' without allocating new threads.  Moreover, the
+MultiMLton garbage collector implements thread-local heaps, and the
+run-time system minimizes coordination between these heaps.
+
+In \textit{A Run-Time Representation of Scheme Record Types}, Keep and
+Dybvig provide an in-depth description of the run-time representation
+of records in the Chez Scheme system.  Records as standardized in the
+R6RS standard for Scheme are quite flexible, with run-time creation of
+record types, flexible generativity, single inheritance, modular
+constructors, and other features Chez Scheme extends the R6RS record
+system with facilities for implementing object-oriented programming
+and foreign fields.  The run-time representation of record types and
+records exposes many small but non-trivial issues, and the paper
+provides a complete tour with all information an implementor might
+need to replicate or improve upon the design in Chez Scheme.
+
+We thank the authors and referees of these articles for their efforts
+producing and reviewing these articles.  We also gratefully
+acknowledge the support of the JFP editors-in-chief and editorial
+office.
+
+\begin{flushright}
+ Michael Sperber\\
+  Active Group GmbH\\
+  sperber@deinprogramm.de\\[2mm]
+  Lennart Augustsson\\
+  Standard Chartered Bank\\
+  lennart@augustsson.net
+\end{flushright}
+\end{document}
+
+% end of JFP2egui.tex
