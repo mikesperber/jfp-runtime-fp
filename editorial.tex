@@ -72,7 +72,14 @@ records poses many small but non-trivial challenges. Keep and Dybvig's paper
 provides a complete tour with all the information an implementor might
 need to replicate or improve upon their design for Chez Scheme.
 
-GHC paper ...
+In \textit{PAEAN: Portable Runtime Support for Physically-Shared-Nothing Architectures in Parallel Haskell Dialects},
+Berthold, Loidl, and Hammond show how a high-level portable runtime system, PAEAN, provides
+support for a parallel Haskell.
+PAEAN abstracts of issues such as work distribution and distribution to be able
+to handle different kinds of modern shared-nothing machines.
+The system is built on top of the existing runtime system for the GHC Haskell compiler
+which handles issues within a local machine, whereas PAEAN handles inter-machine
+issues like task off-loading, load balancing, distributed garbage collection, etc.
 
 In \textit{OCaml-Java: the Java Virtual Machine as the target of an OCaml compiler},
 Xavier Clerc describes the OCaml-Java compiler and runtime system.
