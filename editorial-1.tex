@@ -34,33 +34,29 @@ started soliciting papers.  The
 original call for papers covered native-code platforms as well as
 run-time systems originally designed for non-functional languages
 such as the Java Virtual Machine or the .NET Common Language Runtime.
-As it happens, most of the submissions focused on 
-native-code run-time systems.  
 
-The papers we received
-cover a wide spectrum of languages and implementations.  This issue of
-\textit{Journal of Functional Programming} contains the first two
-accepted papers.
+The submissions covered a wide spectrum of languages and implementations,
+with a focuse on native-code run-time systems.  This issue contains the
+first two accepted papers.
 
 In \textit{MultiMLton: A Multicore-Aware Runtime for Standard ML},
-Sivaramakrishnan, Ziarek and Jagannathan offer a comprehensive account
-of a scalable multicore run-time system for an extended version of
-Standard ML.  The MultiMLton system contains ACML, an implementation of
-Concurrent ML extended with asynchronous events.  ACML allows the
-programmer to elegantly express concurrency and exploit parallelism.
-To implement the concurrency in an ACML program 
-efficiently, the MultiMLton run-time system provides
-extremely cheap concurrency.  To that end, MultiMLton provides
-\textit{parasites}, which run conceptually asynchronous computations
-on ``host threads,'' without allocating new threads.  Moreover, the
-MultiMLton garbage collector implements thread-local heaps, and the
-run-time system minimizes coordination between these heaps.
+Sivaramakrishnan, Ziarek and Jagannathan offer a comprehensive account of a
+scalable multicore run-time system for an extended version of Standard ML.
+MultiMLton provides ACML, a variant of Concurrent ML with asynchronous
+events, which allows programmers to elegantly express concurrency and
+exploit parallelism.  To implement ACML's concurrency efficiently, the
+MultiMLton run-time system provides extremely cheap concurrency.  To that
+end, MultiMLton provides \textit{parasites}, which run conceptually
+asynchronous computations on ``host threads,'' without allocating new
+threads.  Moreover, the MultiMLton garbage collector implements
+thread-local heaps, and the run-time system minimizes coordination between
+these heaps.
 
 In \textit{A Run-Time Representation of Scheme Record Types}, Keep and
 Dybvig describes the run-time representation
 of records in the Chez Scheme system.  
 The R6RS standard for Scheme specifies records that allow run-time creation of
-record types, flexible generativity, single inheritance, and modular
+generative record types, single inheritance, and modular
 constructors. Chez Scheme extends the R6RS record
 system with additional facilities for implementing object-oriented programming
 and foreign fields.  The run-time representation for these record types and
